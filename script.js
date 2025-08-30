@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const navHeight = document.getElementById('navbar').offsetHeight;
         
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - navHeight - 100;
+            const sectionTop = section.offsetTop - navHeight - 200;
             const sectionBottom = sectionTop + section.clientHeight;
             
             if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {

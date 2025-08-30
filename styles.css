@@ -251,7 +251,7 @@ body {
 
 /* About Section */
 #about {
-    padding: 100px 0;
+    padding: 170px 0 100px 0;;
     background: white;
 }
 
@@ -407,7 +407,7 @@ body {
 /* Contact Section */
 #contact {
     padding: 100px 0;
-    background: #333;
+    background: #f8faff;
     color: white;
 }
 
@@ -517,63 +517,68 @@ body {
 
 /* Responsive Design */
 @media (max-width: 968px) {
+    .nav-container {
+        padding: 0 15px;
+        height: 60px; /* Reduce height on mobile */
+    }
+    
+    .nav-logo span {
+        font-size: 20px; /* Smaller logo */
+    }
+    
     .nav-center {
         display: none;
     }
     
-    .nav-container {
-        justify-content: space-between;
+    .language-switcher {
+        flex-shrink: 0; /* Prevent shrinking */
+    }
+    
+    .lang-btn {
+        padding: 6px 8px; /* Smaller padding */
+        font-size: 12px;
+    }
+    
+    .flag {
+        font-size: 14px;
     }
 }
 
 @media (max-width: 768px) {
-    .welcome-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 40px;
-    }
-
-    .welcome-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .social-grid {
-        grid-template-columns: 1fr;
-    }
-
     .contact-link {
         min-width: auto;
         width: 100%;
-        max-width: 300px;
+        max-width: 100%; /* Remove the 300px limit */
+        font-size: 0.95rem; /* Slightly smaller font */
+        padding: 12px 15px; /* Adjust padding */
+        word-break: break-all; /* Allow email to break */
+    }
+    
+    .contact-links {
+        padding: 0 10px; /* Add side padding */
     }
 }
 
 @media (max-width: 480px) {
-    .welcome-content h1 {
-        font-size: 1.8rem;
+    .contact-link {
+        font-size: 0.85rem; /* Even smaller on very small screens */
+        padding: 10px 12px;
+        flex-direction: column; /* Stack icon and text vertically */
+        text-align: center;
+        gap: 8px;
     }
-
-    .welcome-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .skills-grid {
-        grid-template-columns: 1fr;
-    }
-
+    
     .language-switcher {
-        position: relative;
+        position: relative; /* Keep it in normal flow */
         top: auto;
         right: auto;
+    }
+    
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 55px; /* Even smaller on tiny screens */
     }
 }
 

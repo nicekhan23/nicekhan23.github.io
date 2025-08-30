@@ -407,11 +407,12 @@ body {
 /* Contact Section */
 #contact {
     padding: 100px 0;
-    background: #f8faff;
+    background: #1e40af;
     color: white;
 }
 
 #contact h2 {
+    color: white;
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 60px;
@@ -426,7 +427,7 @@ body {
 .contact-content > p {
     font-size: 1.2rem;
     margin-bottom: 50px;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-section, .social-section {
@@ -519,11 +520,12 @@ body {
 @media (max-width: 968px) {
     .nav-container {
         padding: 0 15px;
-        height: 60px; /* Reduce height on mobile */
+        height: 60px;
+        flex-wrap: nowrap;
     }
     
     .nav-logo span {
-        font-size: 20px; /* Smaller logo */
+        font-size: 18px;
     }
     
     .nav-center {
@@ -531,54 +533,135 @@ body {
     }
     
     .language-switcher {
-        flex-shrink: 0; /* Prevent shrinking */
+        flex-shrink: 0;
+        gap: 3px;
+        padding: 3px;
     }
     
     .lang-btn {
-        padding: 6px 8px; /* Smaller padding */
-        font-size: 12px;
+        padding: 4px 6px;
+        font-size: 11px;
+        min-width: auto;
     }
     
     .flag {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 768px) {
+    .welcome-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .welcome-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
+
     .contact-link {
         min-width: auto;
         width: 100%;
-        max-width: 100%; /* Remove the 300px limit */
-        font-size: 0.95rem; /* Slightly smaller font */
-        padding: 12px 15px; /* Adjust padding */
-        word-break: break-all; /* Allow email to break */
+        max-width: 100%;
+        font-size: 0.9rem;
+        padding: 12px 15px;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
     
     .contact-links {
-        padding: 0 10px; /* Add side padding */
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 480px) {
-    .contact-link {
-        font-size: 0.85rem; /* Even smaller on very small screens */
-        padding: 10px 12px;
-        flex-direction: column; /* Stack icon and text vertically */
-        text-align: center;
-        gap: 8px;
+    .nav-container {
+        height: 50px;
+        padding: 0 10px;
+    }
+    
+    .nav-logo span {
+        font-size: 16px;
     }
     
     .language-switcher {
-        position: relative; /* Keep it in normal flow */
+        position: relative;
         top: auto;
         right: auto;
     }
     
-    .nav-container {
+    .lang-btn {
+        padding: 3px 5px;
+        font-size: 10px;
+    }
+    
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-link {
+        font-size: 0.8rem;
+        padding: 10px 12px;
+        text-align: left;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        height: 55px; /* Even smaller on tiny screens */
+        gap: 10px;
+        word-break: break-word;
+    }
+    
+    .contact-link span:first-child {
+        font-size: 1.2rem;
+        width: 20px;
+        flex-shrink: 0;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-container {
+        height: 45px;
+        padding: 0 8px;
+    }
+    
+    .nav-logo span {
+        font-size: 14px;
+    }
+    
+    .lang-btn span:last-child {
+        display: none;
+    }
+    
+    .lang-btn {
+        padding: 2px 4px;
+    }
+    
+    .contact-link {
+        font-size: 0.75rem;
+        padding: 8px 10px;
+    }
+    
+    .container {
+        padding: 0 15px;
     }
 }
 

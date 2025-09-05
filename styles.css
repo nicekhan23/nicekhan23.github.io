@@ -27,6 +27,7 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    min-height: 60px;
 }
 
 .nav-container {
@@ -36,7 +37,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
+    min-height: 60px;
+    height: auto;
 }
 
 .nav-logo span {
@@ -130,20 +132,22 @@ body {
 }
 
 .welcome-content h1 {
-    font-size: 2.8rem;
+    font-size: clamp(1.5rem, 4vw, 2.8rem);
     font-weight: 700;
     margin-bottom: 20px;
     line-height: 1.2;
+    word-wrap: break-word;
+    hyphens: auto;
 }
 
 .welcome-subtitle {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
     margin-bottom: 20px;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .welcome-description {
-    font-size: 1.1rem;
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
     margin-bottom: 40px;
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
@@ -251,7 +255,7 @@ body {
 
 /* About Section */
 #about {
-    padding: 120px 0 100px 0;
+    padding: 140px 0 100px 0;
     background: white;
 }
 
@@ -306,7 +310,7 @@ body {
 
 /* Projects Section */
 #projects {
-    padding: 100px 0;
+    padding: 120px 0;
     background: #f8faff;
 }
 
@@ -406,7 +410,7 @@ body {
 
 /* Contact Section */
 #contact {
-    padding: 100px 0;
+    padding: 120px 0;
     background: #1e40af;
     color: white;
 }
@@ -460,11 +464,14 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
-    padding: 15px 30px;
+    padding: 15px 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
+    min-height: 50px;
+    word-break: break-all;
+    line-height: 1.4;
 }
 
 .contact-link.primary {
@@ -536,12 +543,12 @@ body {
 @media (max-width: 968px) {
     .nav-container {
         padding: 0 15px;
-        height: 60px;
+        min-height: 60px;
         flex-wrap: nowrap;
     }
     
     .nav-logo span {
-        font-size: 18px;
+        font-size: 20px;
     }
     
     .nav-center {
@@ -550,18 +557,18 @@ body {
     
     .language-switcher {
         flex-shrink: 0;
-        gap: 3px;
-        padding: 3px;
+        gap: 5px;
+        padding: 5px;
     }
     
     .lang-btn {
-        padding: 4px 6px;
-        font-size: 11px;
+        padding: 8px 10px;
+        font-size: 12px;
         min-width: auto;
     }
     
     .flag {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
 
@@ -595,19 +602,24 @@ body {
     }
 
     .contact-link {
-        font-size: 0.9rem;
-        padding: 12px 20px;
+        font-size: 0.95rem;
+        padding: 12px 15px;
+        text-align: left;
+        justify-content: flex-start;
+        word-break: break-word;
+        overflow-wrap: break-word;
     }
+
 }
 
 @media (max-width: 480px) {
     .nav-container {
-        height: 50px;
-        padding: 0 10px;
+        min-height: 55px;
+        padding: 0 15px;
     }
     
     .nav-logo span {
-        font-size: 16px;
+        font-size: 18px;
     }
     
     .language-switcher {
@@ -617,29 +629,33 @@ body {
     }
     
     .lang-btn {
-        padding: 3px 5px;
-        font-size: 10px;
+        padding: 6px 8px;
+        font-size: 11px;
     }
     
     .welcome-content h1 {
-        font-size: 1.8rem;
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
+        margin-bottom: 15px;
     }
 
     .welcome-subtitle {
-        font-size: 1.2rem;
+        font-size: clamp(0.9rem, 4vw, 1.2rem);
+        margin-bottom: 15px;
     }
 
     .skills-grid {
         grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .contact-link {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
         padding: 10px 12px;
-        text-align: center;
+        text-align: left;
         flex-direction: row;
         gap: 10px;
         word-break: break-word;
+        min-height: 45px;
     }
     
     .contact-link span:first-child {
@@ -651,12 +667,12 @@ body {
 
 @media (max-width: 360px) {
     .nav-container {
-        height: 45px;
-        padding: 0 8px;
+        min-height: 50px;
+        padding: 0 10px;
     }
     
     .nav-logo span {
-        font-size: 14px;
+        font-size: 16px;
     }
     
     .lang-btn span:last-child {
@@ -664,16 +680,15 @@ body {
     }
     
     .lang-btn {
-        padding: 2px 4px;
-    }
-    
-    .contact-link {
-        font-size: 0.75rem;
-        padding: 8px 10px;
+        padding: 4px 6px;
     }
     
     .container {
         padding: 0 15px;
+    }
+    
+    .welcome-content h1 {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
     }
 }
 
